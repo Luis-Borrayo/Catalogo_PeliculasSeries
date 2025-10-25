@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Catálogo Multimedia</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="🎬 Bienvenido al Catálogo de Películas y Series"
+                 style="margin: 50px auto; max-width: 600px; text-align: center;">
+
+            <p style="font-size: 18px; margin: 20px 0;">
+                Sistema de gestión de películas y series con almacenamiento en Azure Blob Storage
+            </p>
+
+            <p:commandButton value="📊 Ver Dashboard"
+                             action="dashboard?faces-redirect=true"
+                             styleClass="ui-button-success"
+                             style="margin: 10px;"/>
+
+            <p:commandButton value="🎥 Ver Catálogo"
+                             action="catalogo?faces-redirect=true"
+                             styleClass="ui-button-primary"
+                             style="margin: 10px;"/>
+        </p:panel>
+    </h:form>
+</h:body>
+</html>

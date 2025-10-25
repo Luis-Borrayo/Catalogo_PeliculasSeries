@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="jakarta.faces.core">
+
+<h:head>
+    <title>Dashboard - Catálogo Multimedia</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="📊 Estadísticas del Catálogo" style="margin: 20px;">
+
+            <p:panelGrid columns="2" layout="grid"
+                         styleClass="ui-panelgrid-blank"
+                         style="margin-top: 20px;">
+
+                <!-- Total de Títulos -->
+                <p:panel header="Total de Títulos" style="text-align: center;">
+                    <h1 style="color: #007bff; margin: 0;">
+                        #{dashboardBean.totalTitles}
+                    </h1>
+                    <p style="color: #666;">títulos registrados</p>
+                </p:panel>
+
+                <!-- Películas -->
+                <p:panel header="Películas" style="text-align: center;">
+                    <h1 style="color: #28a745; margin: 0;">
+                        #{dashboardBean.totalMovies}
+                    </h1>
+                    <p style="color: #666;">películas</p>
+                </p:panel>
+
+                <!-- Series -->
+                <p:panel header="Series" style="text-align: center;">
+                    <h1 style="color: #ffc107; margin: 0;">
+                        #{dashboardBean.totalSeries}
+                    </h1>
+                    <p style="color: #666;">series</p>
+                </p:panel>
+
+                <!-- Géneros -->
+                <p:panel header="Géneros Disponibles" style="text-align: center;">
+                    <h1 style="color: #6f42c1; margin: 0;">
+                        #{dashboardBean.totalGenres}
+                    </h1>
+                    <p style="color: #666;">géneros</p>
+                </p:panel>
+
+                <!-- Archivos en Azure -->
+                <p:panel header="Archivos en Storage" style="text-align: center;">
+                    <h1 style="color: #17a2b8; margin: 0;">
+                        #{dashboardBean.totalFiles}
+                    </h1>
+                    <p style="color: #666;">archivos activos</p>
+                </p:panel>
+
+                <!-- Títulos con póster -->
+                <p:panel header="Títulos con Póster" style="text-align: center;">
+                    <h1 style="color: #20c997; margin: 0;">
+                        #{dashboardBean.titlesWithPoster}
+                    </h1>
+                    <p style="color: #666;">con póster</p>
+                </p:panel>
+
+                <!-- Títulos del último mes -->
+                <p:panel header="Registrados este Mes" style="text-align: center;">
+                    <h1 style="color: #fd7e14; margin: 0;">
+                        #{dashboardBean.titlesLastMonth}
+                    </h1>
+                    <p style="color: #666;">último mes</p>
+                </p:panel>
+
+            </p:panelGrid>
+
+            <p:commandButton value="🔄 Actualizar"
+                             action="#{dashboardBean.loadStats()}"
+                             update="@form"
+                             style="margin-top: 20px;"
+                             styleClass="ui-button-success"/>
+        </p:panel>
+    </h:form>
+</h:body>
+</html>
